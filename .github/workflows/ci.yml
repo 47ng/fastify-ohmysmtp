@@ -28,10 +28,10 @@ jobs:
         name: Install dependencies
       - run: yarn ci
         name: Run integration tests
-      - uses: coverallsapp/github-action@9ba913c152ae4be1327bfb9085dc806cedb44057
-        name: Report code coverage
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+      # - uses: coverallsapp/github-action@9ba913c152ae4be1327bfb9085dc806cedb44057
+      #   name: Report code coverage
+      #   with:
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
       - uses: 47ng/actions-slack-notify@main
         name: Notify on Slack
         if: always()
