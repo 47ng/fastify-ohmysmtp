@@ -24,18 +24,20 @@
     "access": "public"
   },
   "scripts": {
-    "test": "jest --coverage --runInBand",
-    "test:watch": "jest --watch --runInBand",
+    "build": "run-s build:*",
     "build:clean": "rm -rf ./dist",
     "build:ts": "tsc",
-    "build": "run-s build:clean build:ts",
-    "ci": "run-s build",
-    "test:integration": "NODE_ENV=production ts-node ./tests/integration/main.ts",
+    "test": "run-s test:*",
+    "test:unit": "jest --coverage --runInBand",
+    "test:integration": "ts-node ./src/tests/integration/main.ts",
+    "ci": "run-s build test",
     "prepare": "husky install"
   },
   "dependencies": {
     "@ohmysmtp/ohmysmtp.js": "^0.0.11",
-    "fastify-plugin": "^3.0.0"
+    "fastify-plugin": "^3.0.0",
+    "zod": "^3.11.6",
+    "zod-to-json-schema": "^3.11.2"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^15.0.0",
@@ -53,7 +55,10 @@
   "jest": {
     "verbose": true,
     "preset": "ts-jest/presets/js-with-ts",
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/*.test.ts"
+    ]
   },
   "prettier": {
     "arrowParens": "avoid",

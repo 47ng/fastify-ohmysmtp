@@ -16,7 +16,7 @@
 ## Features
 
 - Send emails
-- Webhooks _(coming soon)_
+- Webhooks
 - Inbound emails _(coming soon)_
 
 ## Installation
@@ -52,6 +52,46 @@ server.ohmysmtp.sendEmail({
 ## Environment Variables
 
 You can provide the API token via the configuration or via the `OHMYSMTP_API_TOKEN` environment variable.
+
+## Webhooks
+
+You can enable reception of webhook events in the configuration object:
+
+```ts
+server.register(fastifyOhMySMTP, {
+  apiToken: 'my-api-token',
+  webhooks: {
+    // Where to attach the webhook endpoint (POST)
+    path: '/webhook',
+
+    /*
+     * An object map of handlers, where keys are the event types, listed here:
+     * https://docs.ohmysmtp.com/guide/webhooks#email-events
+     *
+     * Values are async handlers that take as argument:
+     * - The payload object of the webhook event
+     * - The request object from Fastify
+     * - The Fastify instance
+     */
+    handlers: {
+      'email.spam': async (event, req, fastify) => {
+        req.log.info(event, 'Spam detected')
+        await fastify.ohmysmtp.sendEmail({
+          from: 'robots@example.com',
+          to: 'admin@example.com',
+          subject: 'Spam detected',
+          textbody: `Check event ${event.id} on OhMySMTP`
+        })
+      }
+    },
+
+    // You can pass additional Fastify route props here:
+    routeConfig: {
+      logLevel: 'warn'
+    }
+  }
+})
+```
 
 ## License
 
