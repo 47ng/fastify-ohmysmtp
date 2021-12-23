@@ -2,7 +2,9 @@ name: Continuous Delivery
 
 on:
   push:
-    branches: ['main', 'beta']
+    branches:
+      - main
+      - beta
 
 jobs:
   cd:
