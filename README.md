@@ -1,3 +1,11 @@
+<h2 align="center">🚧 MIGRATION NOTICE 🚧</h2>
+
+[OhMySMTP has rebranded to MailPace](https://blog.mailpace.com/blog/ohmysmtp-is-now-mailpace/). This package will change name soon. If you're considering using it, you might want to wait for v2 to be published under `fastify-mailpace`. This repository will be renamed.
+
+See issue [#7](https://github.com/47ng/fastify-ohmysmtp/issues/7) for progress.
+
+---
+
 <h1 align="center"><code>fastify-ohmysmtp</code></h1>
 
 <div align="center">
