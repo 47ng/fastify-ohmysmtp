@@ -1601,20 +1601,20 @@ fastify-warning@^0.2.0:
   integrity sha512-s1EQguBw/9qtc1p/WTY4eq9WMRIACkj+HTcOIK1in4MV5aFaQC9ZCIt0dJ7pr5bIf4lPpHvAtP2ywpTNgs7hqw==
 
 fastify@^3.25.1:
-  version "3.25.1"
-  resolved "https://registry.yarnpkg.com/fastify/-/fastify-3.25.1.tgz#19da62b06b76f2b985e45d177471caafb40155bf"
-  integrity sha512-hQtjVCbYC6TtYmkA+SQjmE+4D0gYDrfdnISuCx5j0X+8C6SIRMD5Kx+v9JqTh7yKwYCtUcb82GVMASlY/NDpoA==
+  version "3.27.0"
+  resolved "https://registry.yarnpkg.com/fastify/-/fastify-3.27.0.tgz#636d5ece1a8ea81648270b60853e4d1f610fee15"
+  integrity sha512-p99Fd7xt4DFew39U5Wnp/Soy7jkpxpaqToekwQ3XWv+ECUPXd6bSF9l79EiwkutWALtEU/JiRlzS9qjP2gLHFg==
   dependencies:
     "@fastify/ajv-compiler" "^1.0.0"
     abstract-logging "^2.0.0"
     avvio "^7.1.2"
     fast-json-stringify "^2.5.2"
     fastify-error "^0.3.0"
-    fastify-warning "^0.2.0"
     find-my-way "^4.5.0"
     flatstr "^1.0.12"
     light-my-request "^4.2.0"
     pino "^6.13.0"
+    process-warning "^1.0.0"
     proxy-addr "^2.0.7"
     rfdc "^1.1.4"
     secure-json-parse "^2.0.0"
@@ -3118,6 +3118,11 @@ pretty-format@^27.0.0, pretty-format@^27.4.2:
     ansi-regex "^5.0.1"
     ansi-styles "^5.0.0"
     react-is "^17.0.1"
+
+process-warning@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/process-warning/-/process-warning-1.0.0.tgz#980a0b25dc38cd6034181be4b7726d89066b4616"
+  integrity sha512-du4wfLyj4yCZq1VupnVSZmRsPJsNuxoDQFdCFHLaYiEbFBD7QE0a+I4D7hOxrVnh78QE/YipFAj9lXHiXocV+Q==
 
 prompts@^2.0.1:
   version "2.4.2"
