@@ -40,7 +40,7 @@
     "zod-to-json-schema": "^3.11.2"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "^15.0.0",
+    "@commitlint/config-conventional": "^16.2.4",
     "@types/jest": "^27.0.3",
     "@types/node": "^17.0.1",
     "commitlint": "^15.0.0",
